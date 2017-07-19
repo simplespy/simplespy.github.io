@@ -4365,7 +4365,7 @@
 		border:none;
 	}
 	.post-content {
-		font-family: FZLT;
+		font-family: HKK;
 	}
 	.post-content li{
 		list-style-type:none;
@@ -4386,32 +4386,32 @@
 	.post-content h1{
 		text-transform:none;
 		font-size: 3rem;
-		font-family: FZLT;
+		font-family: HKK;
 	}
 	.post-content h2{
 		text-transform:none;
-		font-family: FZLT;
+		font-family: HKK;
 		font-size: 2.5rem;	
 	}
 	.post-content h3{
 		text-transform:none;
-		font-family: FZLT;
+		font-family: HKK;
 		font-size: 2rem;
 		
 	}
 	.post-content h4{
 		text-transform:none;
-		font-family: FZLT;
+		font-family: HKK;
 		font-size: 1.5rem;
 	}
 	.post-content h5{
 		text-transform:none;
-		font-family: FZLT;
+		font-family: HKK;
 		font-size: 1.2rem;
 	}
 	.post-content h6{
 		text-transform:none;
-		font-family: FZLT;
+		font-family: HKK;
 		font-size: 1rem;
 	}
 	.post-content code{
@@ -4427,13 +4427,13 @@
 	}
 	.post_page_title_img a{
 		position:absolute;
-		text-shadow:6px 5px 10px #000;
+		/*text-shadow:6px 5px 10px #000;*/
 		padding-top: 20%;
 		border-bottom:none; 
 	}
 	.post_page_title_img a > h2{
 		font-size: 3rem;
-		color: #fff;
+		color: #000;
 	}
 
 	@media screen and (max-width: 820px) {
