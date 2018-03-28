@@ -28,6 +28,10 @@
 	<button type = "button" id="btnTask56" onclick="task56()">Task5 & 6</button>
 	<br/>
 	<br/>
+	<textarea rows="10" cols="60"></textarea>
+	<!--<button type = "button" id="btnRandom" onclick="RandomQuestion()">Random</button>-->
+	<br/>
+	<br/>
 	<table align="center">
 		<tr>
 			<td id="section">
@@ -78,9 +82,9 @@
 		}
 		function main()
 		{
-		  document.getElementById("btnTask12").disabled=true;
-		  document.getElementById("btnTask34").disabled=true;
-		  document.getElementById("btnTask56").disabled=true;
+		  //document.getElementById("btnTask12").disabled=true;
+		  //document.getElementById("btnTask34").disabled=true;
+		  //document.getElementById("btnTask56").disabled=true;
 		  prepTimer();
 		  setTimeout(testTimer, (prepsec + 2) * 1000);
 		  setTimeout(Reset, (prepsec + testsec + 4) * 1000);
@@ -145,6 +149,11 @@
 			return;
 		  }
 		  return;
+		}
+
+		function RandomQuestion()
+		{
+
 		}
 	</script>
 
