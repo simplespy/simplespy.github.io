@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			text-align: center;
+		}
+		table{
+			width: 350px;
+			font-size: 20px;
+		}
+		#time{
+			color: blue;			
+			font-size: 28px;
+		}
+		#alert{
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>
+		iBT Speaking Test Timer
+	</h1>
+	<button type = "button" id="btnTask12" onclick="task12()">Task1 & 2</button>
+	<button type = "button" id="btnTask34" onclick="task34()">Task3 & 4</button>
+	<button type = "button" id="btnTask56" onclick="task56()">Task5 & 6</button>
+	<br/>
+	<br/>
+	<table align="center">
+		<tr>
+			<td id="section">
+			<br/>
+			</td>
+		</tr>
+		<tr>
+			<td id="time">
+			<br/>
+			</td>
+		</tr>
+		<tr>
+			<td id="alert">
+			<audio id = "audio1">
+				<source src = "beep.wav" type = "audio/wav">
+			</audio>
+			</td>
+	</table>
+	<script>
+		var prepsec;
+		var testsec;
+		var d;
+		var target;
+		var current;
+		var count;
+		var counter;
+		var beep = document.getElementById("audio1"); ;
+
+		function task12(){
+			prepsec = 15;
+			testsec = 45;
+			main();
+			return;
+		}
+		
+		function task34(){
+			prepsec = 30;
+			testsec = 60;
+			main();
+			return;
+		}
+		
+		function task56(){
+			prepsec = 20;
+			testsec = 60;
+			main();
+			return;
+		}
+		function main()
+		{
+		  document.getElementById("btnTask12").disabled=true;
+		  document.getElementById("btnTask34").disabled=true;
+		  document.getElementById("btnTask56").disabled=true;
+		  prepTimer();
+		  setTimeout(testTimer, (prepsec + 2) * 1000);
+		  setTimeout(Reset, (prepsec + testsec + 4) * 1000);
+		}
+
+		function prepTimer()
+		{
+		  document.getElementById("alert").style.backgroundColor = "white";
+		  clearInterval(counter);
+		  document.getElementById("time").innerHTML = "<br/>";
+		  document.getElementById("section").innerHTML = "Preparation your answer: ";  
+		  d = new Date();
+		  target = d.getTime() + prepsec * 1000;
+		  timer();
+		  counter= setInterval(timer, 1000); 
+		}
+
+		function testTimer()
+		{
+		  document.getElementById("alert").style.backgroundColor = "white";
+		  clearInterval(counter);
+		  document.getElementById("time").innerHTML = "<br/>";
+		  document.getElementById("section").innerHTML = "Recording: ";
+		  d = new Date(); 
+		  target = d.getTime() + testsec * 1000;
+		  beep.play();
+		  timer();
+		  counter= setInterval(timer, 1000); 
+		}
+
+		function Reset()
+		{
+		  document.getElementById("alert").style.backgroundColor = "white";
+		  document.getElementById("btnTask12").disabled=false;
+		  document.getElementById("btnTask34").disabled=false;
+		  document.getElementById("btnTask56").disabled=false;
+		  document.getElementById("section").innerHTML = "<br/>";  
+		  document.getElementById("time").innerHTML = "<br/>";
+		  return;
+		} 
+
+		function timer()
+		{
+		  d = new Date();
+		  current = d.getTime();
+		  count = Math.ceil((target - current) / 1000);
+		  if (count < 0)
+		  {
+		    clearInterval(counter);
+			return;
+		  }
+		  var curmin = Math.floor(count / 60);
+		  var cursec = count % 60;
+		  if (curmin <= 9) curmin = "0"+ curmin;
+		  if (cursec <= 9) cursec = "0"+ cursec;
+		  document.getElementById("time").innerHTML = curmin + ":" + cursec;
+		  if (count == 0)
+		  {
+		    document.getElementById("alert").style.backgroundColor = "red";
+		    beep.play();
+		    clearInterval(counter);
+			return;
+		  }
+		  return;
+		}
+	</script>
+
+</body>
+</html>
