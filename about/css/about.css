@@ -11,12 +11,12 @@ p {
 }
 
 a {
-    color: #24936E;
+    color: #00918C;
     text-decoration: none;
 }
 
 a:hover, a:focus {
-    color: #330986;
+    color: #D92617;
     text-decoration: underline;
 }
 
