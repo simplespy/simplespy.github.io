@@ -14,7 +14,10 @@ a {
     color: #00918C;
     text-decoration: none;
 }
-
+a.contact {
+    color: #888;
+    text-decoration: none;
+}
 a:hover, a:focus {
     color: #D92617;
     text-decoration: underline;
@@ -98,4 +101,9 @@ h2 {
 
 #footer, code {
     font-family: Courier, 'Courier New', monospace;
+}
+
+#contact {
+    text-align: center;
+    color: #888;
 }
