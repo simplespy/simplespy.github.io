@@ -1,0 +1,42 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Verifier's-Relief-a-Sequential-Incentive-Mechanism-for-Outsourced-Computing-System"><a href="#Verifier's-Relief-a-Sequential-Incentive-Mechanism-for-Outsourced-Computing-System" class="headerlink" title="Verifier's Relief: a Sequential Incentive Mechanism for Outsourced Computing System"></a>Verifier's Relief: a Sequential Incentive Mechanism for Outsourced Computing System</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Computations once were executed where they were needed, now they can be offloaded to other clients with computing power. However, the correctness of such outsourced solution is far from guaranteed because most of those untrusted clients are self-interested and some of them are even byzantine. While building outsourced computing system based on blockchain can provide authenticity based on Nakamoto consensus through verification, users are susceptible to a resource exhaustion attack or an incorrect transaction attack as the verification cost increases (known as Verifier's Dilemma). In this work, we proposed an extra incentive mechanism based on peer prediction and online learning atop blockchains consensus protocol to both increase scalability and provide incentives.</p>
+<h2 id="Problem-Statement"><a href="#Problem-Statement" class="headerlink" title="Problem Statement"></a>Problem Statement</h2><h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>Nakamoto consensus protocol in Bitcoin and Ethereum lacks of:</p>
+<ul>
+<li>Scalability: heavy transactions will not be processed (because of gas limit) </li>
+<li>Incentive: even though gas limit has the possibility to increase gradually, rational verifiers have the incentive to skip verification at that time (Verifier's Dilemma)</li>
+</ul>
+<h3 id="Adversary-Model"><a href="#Adversary-Model" class="headerlink" title="Adversary Model"></a>Adversary Model</h3><ul>
+<li>Attack 1 (Resource exhaustion attack by problem givers): malicious miners can attack their peers with zero financial risks via the scriptability feature of cryptocurrencies.</li>
+<li>Attack 2 (Incorrect transaction attack by provers): Due to Attack 1, rational miners have the incentive to skip the verification of expensive transactions.</li>
+<li>Byzantine Fault: In the context of peer prediction, adversaries may produce incorrect or inconsistent outputs or delay reporting in an unpredictable way.</li>
+</ul>
+<p>Facing these adversarial behaviors both from malicious and rational nodes, the objective of our mechanism is to achieve (1). Byzantine Nash Equilibrium: with the defined utility function for rational nodes, there is no benefit to unilaterally deviate from the protocol; (2) incentive-compatible: we achieve desired properties when rational nodes follow the protocol as specified; (3). byzantine consensus: guarantee Agreement, Termination and Validity with the bound on the fraction of malicious nodes.</p>
+<h2 id="System-Framework"><a href="#System-Framework" class="headerlink" title="System Framework"></a>System Framework</h2><p><img src="vr/1.png" width="600"></p>
+<ul>
+<li>Collector's functions<ul>
+<li><code>Collector.select_verifier()</code><ul>
+<li>learn proficiency</li>
+<li>maximize accuracy</li>
+<li>decrease communication cost</li>
+</ul>
+</li>
+<li><code>Collector.aggregate_report()</code><ul>
+<li>achieve consensus</li>
+<li>variation of majority voting</li>
+</ul>
+</li>
+<li><code>Collector.distribute_reward()</code><ul>
+<li>peer prediction in the presence of Byzantine nodes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reward Setting<br><img src="vr/2.png" width="400"></li>
+<li>Verifier Selection<ul>
+<li>posted price (set by transaction giver)</li>
+<li>proficiency (updated accuracy above threshold cost)</li>
+<li>threshold cost (boundary line of accuracy)</li>
+<li>size of participation set (decrease by exploration)</li>
+<li>consensus bar (increase by exploitation)</li>
+</ul>
+</li>
+</ul>

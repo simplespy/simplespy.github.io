@@ -1,0 +1,46 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Decentralized-Privacy-Preserving-Advertisement-System"><a href="#Decentralized-Privacy-Preserving-Advertisement-System" class="headerlink" title="Decentralized Privacy-Preserving Advertisement System"></a>Decentralized Privacy-Preserving Advertisement System</h1>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>Online advertising has been playing a crucial role in the Internet economy. However, the current centralized advertising framework faces several challenges including user-privacy leakage and transaction manipulation. In this work, we propose a decentralized advertisement system, aiming to provide transparent, consistent, and privacy-preserving online advertising services for participants in the advertising value chain.</p>
+<h2 id="System-Design"><a href="#System-Design" class="headerlink" title="System Design"></a>System Design</h2><h3 id="System-Components"><a href="#System-Components" class="headerlink" title="System Components"></a>System Components</h3><ul>
+<li>User contract<ul>
+<li>public: address of data, constraints (like payment or privacy requirements)</li>
+<li>private: data decryption key</li>
+</ul>
+</li>
+<li>Advertiser contract: <ul>
+<li>public: corresponding attributes to user's constraints</li>
+<li>target_audience: (default) all users</li>
+<li>AdSet: ad candidates<ul>
+<li>daily budget</li>
+<li>duration (start time, end time)</li>
+<li>a group of ads</li>
+<li>Ad: title, description, link, images</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Publisher contract: <ul>
+<li>an auction mechanism to find the winners which can be served on the app</li>
+<li>an recommendation system for winners to mine attributes from user's data for accurate targeting</li>
+</ul>
+</li>
+</ul>
+<h3 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h3><ol>
+<li>Preparation: Contracts initialization, key generation.</li>
+<li>Data exchange: Advertisers request user's information. If information requested are privacy, advertiser can only access data after user authorizes advertiser (by sending encryption key).</li>
+<li>Bidding for ad plots: User invoke Publisher contract to start up an auction for ads plots. Advertisers who are interested bid for the ad plot within bidding contract's lifetime. Publisher get winners of the bid.</li>
+<li>Recommendation: When user opens a page or launches the app, it sends a signal to trigger ad recommendation. Advertisers (winners in bidding) receive the signal, run their model in secure enclave and publish their decision of ad content.</li>
+<li>Display: Publisher access to the ad content and render it on user's page.</li>
+</ol>
+<h3 id="Decentralization"><a href="#Decentralization" class="headerlink" title="Decentralization"></a>Decentralization</h3><ul>
+<li><strong>Decentralized user-data management</strong>: In this system, no central entity collects the users' data. Instead, each user keeps his own data, which can be encrypted, and decides under what condition and with which advertiser to provide his data safely through a smart contract called data manager contract and secure hardware. In this way, the users gain fine-grained control over their data usage, without the concern that their private data may be abused or even resold without their permission.</li>
+<li><strong>Decentralized advertisement bidding</strong>: We adopt publisher contracts to handle advertisement bidding process. Each time a publisher provides some advertisement plots, the advertisers can bid for them by sending transactions to a publisher contract, which automatically runs an auction algorithm. The bidding results are recorded on the blockchain and are thus verifiable, and the payment is transferred via blockchain transactions, without the need for a centralized party, making the whole bidding process fair and transparent.</li>
+</ul>
+<h3 id="Privacy-preserving-Recommendation"><a href="#Privacy-preserving-Recommendation" class="headerlink" title="Privacy-preserving Recommendation"></a>Privacy-preserving Recommendation</h3><p>Advertiser can get recommendation results without direct access to user's data through the following steps:</p>
+<ol>
+<li>User generates symmetric key <code>EK_u</code>, encrypts data with it (<code>s = Enc(data, EK_u)</code>)</li>
+<li>Advertiser generates asymmetric key <code>(PK_a, SK_a)</code>, publishes the public key <code>PK_a</code></li>
+<li>If data usage constraints check passes, the user encrypts its key with advertiser's public key, <code>msg = Enc(EK_u, PK_a)</code></li>
+<li>Advertiser passes both <code>msg</code> and <code>s</code> to secure enclave, where decryption and recommendation will run, and gets output (advertisement id)<br><img src="dppads/1.png" width="300">
+</ol>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><img src="dppads/2.png" width="300"> <img src="dppads/3.png" width="300"></li>
+
