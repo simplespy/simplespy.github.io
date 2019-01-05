@@ -2196,6 +2196,9 @@
 	#main{
 		margin-bottom: 0.5rem;	
 	}
+	#main .header .h1 {
+		color: #000;
+	}
 	#me{
 		margin-bottom: 2rem;
 	}
