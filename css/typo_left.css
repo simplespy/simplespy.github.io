@@ -232,6 +232,10 @@ pre {
   -webkit-overflow-scrolling: touch;
 }
 
+iframe {
+  padding: 2em;
+}
+
 /* 一致化 horizontal rule */
 hr {
   border: none;
