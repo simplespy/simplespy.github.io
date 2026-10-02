@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Peiyao Sheng</title>
-    <meta name="description" content="Peiyao Sheng, AI researcher working on LLM reasoning, evaluation, training for sound reasoning, and the security of language agents.">
+    <meta name="description" content="Peiyao Sheng, researcher working on the trustworthiness of LLMs and agents: agent security, verifiable reasoning, and model fingerprinting.">
 
     <link rel="stylesheet" href="./css/normalize.css" type="text/css">
     <link rel="stylesheet" href="./css/about.css" type="text/css">
@@ -20,12 +20,6 @@
         .center-line { text-align: center; margin-top: 0; }
         .center-line a { text-decoration: none; margin: 0 10px; color: #333; }
         .center-line a:hover { color: #00918C; }
-
-        .interests { margin: 0.4em 0 1em; }
-        .interests span {
-            display: inline-block; font-size: 0.85em; padding: 2px 10px; margin: 3px 4px 3px 0;
-            border: 1px solid #00918C; border-radius: 12px; color: #00918C;
-        }
 
         .news { list-style: none; padding-left: 0; }
         .news li { margin-bottom: 0.45em; display: flex; gap: 0.8em; }
@@ -44,7 +38,8 @@
         .pubs li { margin-bottom: 0.9em; }
         .venue { color: #555; }
         .award { color: #b8860b; }
-        .tag-preprint { font-size: 0.8em; color: #777; border: 1px solid #ccc; border-radius: 4px; padding: 0 5px; }
+        .mentor { color: #00918C; font-weight: bold; cursor: help; }
+        .pub-note { font-size: 0.8em; color: #666; margin-top: -0.3em; }
     </style>
 </head>
 
@@ -58,10 +53,10 @@
     <img src="./img/pys.png" alt="Peiyao Sheng" id="header-photo">
 
     <p>
-        I am a Researcher at <a href="https://sentient.xyz/" target="_blank" rel="external">Sentient Labs</a>, working on making large language models reliable, verifiable, and secure. My recent work spans LLM reasoning and evaluation, model provenance, and the security of LLM agents.
+        I am a Researcher at <a href="https://sentient.xyz/" target="_blank" rel="external">Sentient Labs</a>, working on the trustworthiness of LLMs and agents. My research interests span agent security and verifiable reasoning, as well as model fingerprinting and LLM evaluation.
     </p>
     <p>
-        Before focusing on AI, I worked on the security of decentralized systems and co-founded <a href="https://x.com/witnesschain?lang=en" target="_blank" rel="external">Witness Chain</a>; that background in adversarial, accountable system design shapes how I approach AI today: I am interested in models whose behavior can be checked, attributed, and trusted at scale. 
+        Before focusing on AI, I worked on the security and accountability of decentralized systems. I co-founded <a href="https://x.com/witnesschain?lang=en" target="_blank" rel="external">Witness Chain</a> and built its research foundation on a verifiable physical trust stack. That background shapes how I approach models and agents today: verifying their context and behavior instead of taking them on trust. 
     </p>
     <p>
         I received my Ph.D. in Computer Science from <a href="https://illinois.edu/" target="_blank" rel="external">UIUC</a>, advised by Prof. <a href="https://ece.princeton.edu/people/pramod-viswanath" target="_blank" rel="external">Pramod Viswanath</a>, and was a visiting researcher at <a href="https://decenter.princeton.edu/" target="_blank" rel="external">Princeton University</a>. I interned at Chainlink Labs with <a href="https://malkhi.com" target="_blank" rel="external">Prof. Dahlia Malkhi</a>. I received my B.S. from the <a href="http://acm.sjtu.edu.cn" target="_blank" rel="external">ACM Honors Class</a>, <a href="http://zhiyuan.sjtu.edu.cn/" target="_blank" rel="external">Zhiyuan College</a>, <a href="http://en.sjtu.edu.cn" target="_blank" rel="external">Shanghai Jiao Tong University</a>.
@@ -69,7 +64,6 @@
 
     <div class="center-line">
         <p>
-            <!-- TODO: upload your CV as cv.pdf next to this file <a href="https://x.com/peiyaosheng" target="_blank" rel="external" title="X"><i class="fa-brands fa-x-twitter fa-2x"></i></a>-->
             <a href="./CV_Peiyao_Sheng.pdf" target="_blank" title="CV"><i class="fa-regular fa-file-lines fa-2x"></i></a>
             <a href="https://scholar.google.com/citations?user=bq4XOB0AAAAJ&amp;hl=en" target="_blank" rel="external" title="Google Scholar"><i class="ai ai-google-scholar fa-2x"></i></a>
             <a href="https://github.com/simplespy" target="_blank" rel="external" title="GitHub"><i class="fa-brands fa-github fa-2x"></i></a>
@@ -106,25 +100,26 @@
             <li class="new-year"><span class="date">Dec 2024</span><span>Joined <strong>Sentient Labs</strong> as a Researcher.</span></li>
             <li><span class="date">Nov 2024</span><span>Successfully defended my Ph.D. thesis 🎉.</span></li>
             <li><span class="date">Sep 2024</span><span>Presented two papers, CFT-Forensics and Proof of Diligence, at AFT 2024 <span class="loc">· Vienna, Austria</span></span></li>
-            <li><span class="date">Sep 2024</span><span>Co-hosted <em>DePIN x AI Frontiers</em> at Consensus <span class="loc">· Singapore</span></span></li>
+            <li><span class="date">Sep 2024</span><span>Co-hosted <em>DePIN x AI Frontiers</em> at Token2049 <span class="loc">· Singapore</span></span></li>
             <li><span class="date">Aug 2024</span><span>Presented a technical framework for unifying DePIN coordination at Cornell Tech.</span></li>
             <li><span class="date">Jul 2024</span><span>Co-hosted <em>DePIN Frontiers</em> at EthCC <span class="loc">· Brussels, Belgium</span></span></li>
             <li><span class="date">May 2024</span><span>Invited talk on Proof of Bandwidth at Consensus 2024 <span class="loc">· Austin</span></span></li>
             <li><span class="date">Apr 2024</span><span>Invited talk on unifying DePIN Economy at the DePIN Summit <span class="loc">· Princeton</span></span></li>
             <li><span class="date">Feb 2024</span><span>Presented Proof of Backhaul at NDSS 2024 <span class="loc">· San Diego</span></span></li>
             <li class="new-year"><span class="date">Nov 2023</span><span>Presented TrustBoost at CCS 2023 <span class="loc">· Copenhagen, Denmark</span></span></li>
-            <li class="new-year"><span class="date">Aug 2023</span><span>Presented Boosting Trust among Interoperable blockchains at SBC 2023 <span class="loc">· Stanford University</span></span></li>
-            <li><span class="date">May 2023</span><span>Presented <a href="https://eprint.iacr.org/2022/1513" target="_blank" rel="external">Player-Replaceability and Forensic Support are Two Sides of the Same (Crypto) Coin</a> at FC 2023 <span class="loc">· Bol, Croatia</span></span></li>
+            <li><span class="date">Aug 2023</span><span>Presented Boosting Trust among Interoperable blockchains at SBC 2023 <span class="loc">· Stanford University</span></span></li>
+            <li><span class="date">May 2023</span><span>Presented Player-Replaceability and Forensic Support are Two Sides of the Same (Crypto) Coin at FC 2023 <span class="loc">· Bol, Croatia</span></span></li>
         </ul>
     </details>
 
     <h2>Publications</h2>
+    <p class="pub-note"><span class="mentor">&dagger;</span> Co-mentored project</p>
 
     <h3 class="topic">AI &amp; Language Models</h3>
     <ul class="pubs">
         <li>
             <div><em><a href="https://www.arxiv.org/abs/2511.17671" target="_blank" rel="external">Cross-User Poisoning: User-Task Boundary Failures in Multi-User Collaborative Language Agents</a></em></div>
-            <div>Atharv Singh Patlan, <strong>Peiyao Sheng</strong>, S. Ashwin Hebbar, Prateek Mittal, Pramod Viswanath</div>
+            <div>Atharv Singh Patlan, <strong>Peiyao Sheng</strong><sup class="mentor" title="Co-mentor">&dagger;</sup>, S. Ashwin Hebbar, Prateek Mittal, Pramod Viswanath</div>
             <div class="venue">Conference on Neural Information Processing Systems (NeurIPS), 2026</div>
         </li>
         <li>
@@ -134,18 +129,18 @@
         </li>
         <li>
             <div><em>Representation-Aligned Auxiliary Supervision for Language Model Adaptation</em></div>
-            <div>Kyuyoung Kim, <strong>Peiyao Sheng</strong>, Ashwin Hebbar, Peiyang Xu, Yunfei Xie, Kevin Wang, Rui Xin, Chen Wei, Zhangyang Wang, Jinwoo Shin, Pramod Viswanath, Sewoong Oh</div>
+            <div>Kyuyoung Kim, <strong>Peiyao Sheng</strong><sup class="mentor" title="Co-mentor">&dagger;</sup>, Ashwin Hebbar, Peiyang Xu, Yunfei Xie, Kevin Wang, Rui Xin, Chen Wei, Zhangyang Wang, Jinwoo Shin, Pramod Viswanath, Sewoong Oh</div>
             <div class="venue"><a href="https://lp4fm.github.io/" target="_blank" rel="external">NeurIPS 2026 Workshop on Linguistic Principles for Foundation Models</a></div>
             <div class="award">🏆 Outstanding Runner-Up Award</div>
         </li>
         <li>
             <div><em><a href="https://arxiv.org/pdf/2608.04240" target="_blank" rel="external">Hallucinations on the Board: Tool-Augmented Evaluation of LLM Chess Commentary</a></em></div>
-            <div>Ashwin Hebbar, <strong>Peiyao Sheng</strong>, Sewoong Oh, Pramod Viswanath</div>
+            <div>Ashwin Hebbar, <strong>Peiyao Sheng</strong><sup class="mentor" title="Co-mentor">&dagger;</sup>, Sewoong Oh, Pramod Viswanath</div>
             <div class="venue">Preprint 2026</div>
         </li>
         <li>
             <div><em><a href="https://arxiv.org/abs/2503.16248" target="_blank" rel="external">Real AI Agents with Fake Memories: Fatal Context Manipulation Attacks on Web3 Agents</a></em></div>
-            <div>Atharv Singh Patlan, <strong>Peiyao Sheng</strong>, S. Ashwin Hebbar, Prateek Mittal, Pramod Viswanath</div>
+            <div>Atharv Singh Patlan, <strong>Peiyao Sheng</strong><sup class="mentor" title="Co-mentor">&dagger;</sup>, S. Ashwin Hebbar, Prateek Mittal, Pramod Viswanath</div>
             <div class="venue"><a href="https://fc26.ifca.ai/" target="_blank" rel="external">Financial Cryptography and Data Security (FC), 2026</a></div>
         </li>
         <li>
@@ -160,7 +155,7 @@
         </li>
         <li>
             <div><em><a href="https://arxiv.org/html/2506.04636v2" target="_blank" rel="external">CHANCERY: Evaluating Corporate Governance Reasoning Capabilities in Language Models</a></em></div>
-            <div>Lucas Irwin, Arda Kaz, <strong>Peiyao Sheng</strong>, Pramod Viswanath</div>
+            <div>Lucas Irwin, Arda Kaz, <strong>Peiyao Sheng</strong><sup class="mentor" title="Co-mentor">&dagger;</sup>, Pramod Viswanath</div>
             <div class="venue">Preprint 2025</div>
         </li>
         <li>
@@ -179,7 +174,7 @@
     <ul class="pubs">
         <li>
             <div><em><a href="https://arxiv.org/abs/2405.01459" target="_blank" rel="external">Unconditionally Safe Light Client</a></em></div>
-            <div>Niusha Moshrefi, <strong>Peiyao Sheng</strong>, Soubhik Deb, Sreeram Kannan, Pramod Viswanath</div>
+            <div>Niusha Moshrefi, <strong>Peiyao Sheng</strong><sup class="mentor" title="Co-mentor">&dagger;</sup>, Soubhik Deb, Sreeram Kannan, Pramod Viswanath</div>
             <div class="venue">International Conference on Blockchain (ICBC), 2025</div>
             <div class="award">🏆 Best Paper Award</div>
         </li>
